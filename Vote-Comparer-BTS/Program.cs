@@ -9,6 +9,9 @@ namespace Vote_Comparer_BTS
     {
         static void Main(string[] args)
         {
+
+            int = BTS_Old
+
         }
     }
 }
