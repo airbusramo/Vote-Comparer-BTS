@@ -10,8 +10,12 @@ namespace Vote_Comparer_BTS
         static void Main(string[] args)
         {
 
-            int BTS_Old = 1;
-            Console.WriteLine(BTS_Old);
+         Console.Write("BTS's old amount of votes:");
+
+         string BTS_Old = Console.ReadLine();
+
+         Console.WriteLine(BTS_Old);
+
         }
     }
 }
