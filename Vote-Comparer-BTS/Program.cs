@@ -29,21 +29,23 @@ namespace Vote_Comparer_BTS
             int BTS_New_Int;
             int Competitor_Old_Int;
             int Competitor_New_Int;
-            int Time_Difference_Int;
+            decimal Time_Difference_Int;
 
             //Converting from string input to int.
             Int32.TryParse(BTS_Old_Input, out BTS_Old_Int);
             Int32.TryParse(BTS_New_Input, out BTS_New_Int);
             Int32.TryParse(Competitor_Old_Input, out Competitor_Old_Int);
             Int32.TryParse(Competitor_New_Input, out Competitor_New_Int);
-            Int32.TryParse(Time_Difference_Input, out Time_Difference_Int);
+            decimal.TryParse(Time_Difference_Input, out Time_Difference_Int);
 
-            int BTS_Change = BTS_New_Int - BTS_Old_Int;
+            decimal BTS_Change = BTS_New_Int - BTS_Old_Int;
             int Competitor_Change = Competitor_New_Int - Competitor_Old_Int;
+            decimal BTS_VPM = BTS_Change / Time_Difference_Int;
 
-            Console.WriteLine("BTS change is " + BTS_Change);
-            Console.WriteLine("Competitor change is " + Competitor_Change);
+            Console.WriteLine("BTS change is " + BTS_Change + ".");
+            Console.WriteLine("Competitor change is " + Competitor_Change + ".");
             Console.WriteLine(Time_Difference_Int);
+            Console.WriteLine("BTS VPM:" + BTS_VPM);
         }
     }
 }
