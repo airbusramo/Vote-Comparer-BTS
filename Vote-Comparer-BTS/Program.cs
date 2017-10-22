@@ -25,6 +25,8 @@ namespace Vote_Comparer_BTS
             Console.Write("Time difference (in minutes):");
             string Time_Difference_Input = Console.ReadLine();
 
+            Console.WriteLine(Environment.NewLine);
+
             int BTS_Old_Int;
             int BTS_New_Int;
             int Competitor_Old_Int;
@@ -45,17 +47,22 @@ namespace Vote_Comparer_BTS
 
             Console.WriteLine("BTS change is " + BTS_Change + ".");
             Console.WriteLine("Competitor change is " + Competitor_Change + ".");
-            Console.WriteLine(Time_Difference_Decimal);
             Console.WriteLine("BTS VPM:" + BTS_VPM);
             Console.WriteLine("Competitor VPM:" + Competitor_VPM);
+
+            Console.WriteLine(Environment.NewLine);
 
             if (BTS_New_Int > Competitor_New_Int)
             {
                 Console.WriteLine("BTS is currently ahead.");
             }
+            else if (BTS_New_Int < Competitor_New_Int)
+            {
+                Console.WriteLine("BTS is currently behind.");
+            }
             else
             {
-                Console.WriteLine("BTS is currently behind");
+                Console.WriteLine("BTS and the competitor are currently tied.");
             }
         }
     }
