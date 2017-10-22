@@ -29,23 +29,34 @@ namespace Vote_Comparer_BTS
             int BTS_New_Int;
             int Competitor_Old_Int;
             int Competitor_New_Int;
-            decimal Time_Difference_Int;
+            decimal Time_Difference_Decimal;
 
             //Converting from string input to int.
             Int32.TryParse(BTS_Old_Input, out BTS_Old_Int);
             Int32.TryParse(BTS_New_Input, out BTS_New_Int);
             Int32.TryParse(Competitor_Old_Input, out Competitor_Old_Int);
             Int32.TryParse(Competitor_New_Input, out Competitor_New_Int);
-            decimal.TryParse(Time_Difference_Input, out Time_Difference_Int);
+            decimal.TryParse(Time_Difference_Input, out Time_Difference_Decimal);
 
             decimal BTS_Change = BTS_New_Int - BTS_Old_Int;
-            int Competitor_Change = Competitor_New_Int - Competitor_Old_Int;
-            decimal BTS_VPM = BTS_Change / Time_Difference_Int;
+            decimal Competitor_Change = Competitor_New_Int - Competitor_Old_Int;
+            decimal BTS_VPM = BTS_Change / Time_Difference_Decimal;
+            decimal Competitor_VPM = Competitor_Change / Time_Difference_Decimal;
 
             Console.WriteLine("BTS change is " + BTS_Change + ".");
             Console.WriteLine("Competitor change is " + Competitor_Change + ".");
-            Console.WriteLine(Time_Difference_Int);
+            Console.WriteLine(Time_Difference_Decimal);
             Console.WriteLine("BTS VPM:" + BTS_VPM);
+            Console.WriteLine("Competitor VPM:" + Competitor_VPM);
+
+            if (BTS_New_Int > Competitor_New_Int)
+            {
+                Console.WriteLine("BTS is currently ahead.");
+            }
+            else
+            {
+                Console.WriteLine("BTS is currently behind");
+            }
         }
     }
 }
