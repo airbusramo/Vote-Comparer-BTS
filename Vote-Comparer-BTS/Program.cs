@@ -44,6 +44,7 @@ namespace Vote_Comparer_BTS
             decimal Competitor_Change = Competitor_New_Int - Competitor_Old_Int;
             decimal BTS_VPM = BTS_Change / Time_Difference_Decimal;
             decimal Competitor_VPM = Competitor_Change / Time_Difference_Decimal;
+            decimal BTS_Net_VPM = BTS_VPM - Competitor_VPM;
 
             Console.WriteLine("BTS change is " + BTS_Change + ".");
             Console.WriteLine("Competitor change is " + Competitor_Change + ".");
@@ -63,6 +64,17 @@ namespace Vote_Comparer_BTS
             else
             {
                 Console.WriteLine("BTS and the competitor are currently tied.");
+            }
+
+            if ((BTS_VPM > Competitor_VPM) && (BTS_New_Int > Competitor_New_Int))
+            {
+                Console.WriteLine("BTS going to continue winning until something changes.");
+            }
+            else //((BTS_VPM > Competitor_VPM) && (BTS_New_Int < Competitor_New_Int))
+            {
+                decimal Win_Time_Min = Competitor_Change / BTS_Net_VPM;
+                decimal Win_Time_Hour = Win_Time_Min / 60;
+                Console.WriteLine("BTS will start winning after " + Win_Time_Min + " minutes. (" + Win_Time_Hour + " hours)");
             }
         }
     }
