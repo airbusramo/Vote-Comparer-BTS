@@ -78,11 +78,15 @@ namespace Vote_Comparer_BTS
             }
             else //((BTS_VPM > Competitor_VPM) && (BTS_New_Int < Competitor_New_Int))
             {
-                if (BTS_Net_VPM != 0)
-                 {
-                 decimal Win_Time_Min = Competitor_Change / BTS_Net_VPM;
-                 decimal Win_Time_Hour = Win_Time_Min / 60;
-                 Console.WriteLine("BTS will start winning after " + Win_Time_Min + " minutes. (" + Win_Time_Hour + " hours)");
+                if (BTS_Net_VPM > 0)
+                {
+                    decimal Win_Time_Min = Competitor_Change / BTS_Net_VPM;
+                    decimal Win_Time_Hour = Win_Time_Min / 60;
+                    Console.WriteLine("BTS will start winning after " + Win_Time_Min + " minutes. (" + Win_Time_Hour + " hours)");
+                }
+                else if (BTS_Net_VPM < 0)
+                {
+                    Console.WriteLine("They will continue to lose unless something changes.");
                 }
             }
 
