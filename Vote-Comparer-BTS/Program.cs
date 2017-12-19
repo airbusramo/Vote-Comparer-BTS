@@ -83,7 +83,7 @@ namespace Vote_Comparer_BTS
                     decimal Win_Time_Min = Competitor_Change / BTS_Net_VPM;
                     decimal Win_Time_Hour = Win_Time_Min / 60;
                     Console.WriteLine("BTS will start winning after " + Win_Time_Min + " minutes. (" + Win_Time_Hour + " hours)");
-                    if (Win_Time_Min > Time_Limit_Decimal)
+                    if (Win_Time_Min >= Time_Limit_Decimal && string.IsNullOrEmpty(Time_Limit_Input) == false)
                     {
                         Console.WriteLine("But, the time limit says they won't make it in time.");
                     }
