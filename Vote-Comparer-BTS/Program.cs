@@ -76,23 +76,22 @@ namespace Vote_Comparer_BTS
             {
                 Console.WriteLine("BTS going to continue winning until something changes.");
             }
-            else //((BTS_VPM > Competitor_VPM) && (BTS_New_Int < Competitor_New_Int))
+            else
             {
                 if (BTS_Net_VPM > 0)
                 {
                     decimal Win_Time_Min = Competitor_Change / BTS_Net_VPM;
                     decimal Win_Time_Hour = Win_Time_Min / 60;
                     Console.WriteLine("BTS will start winning after " + Win_Time_Min + " minutes. (" + Win_Time_Hour + " hours)");
+                    if (Win_Time_Min > Time_Limit_Decimal)
+                    {
+                        Console.WriteLine("But, the time limit says they won't make it in time.");
+                    }
                 }
                 else if (BTS_Net_VPM < 0)
                 {
                     Console.WriteLine("They will continue to lose unless something changes.");
                 }
-            }
-
-            if (Time_Limit_Decimal > 0)
-            {
-                //Console.WriteLine("But, the time limit says they won't make it in time.");
             }
         }
     }
