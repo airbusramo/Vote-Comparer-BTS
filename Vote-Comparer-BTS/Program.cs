@@ -93,6 +93,9 @@ namespace Vote_Comparer_BTS
                     Console.WriteLine("They will continue to lose unless something changes.");
                 }
             }
+
+            Console.WriteLine("Press any key to close the program.");
+            Console.ReadKey();
         }
     }
 }
